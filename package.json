@@ -1,0 +1,22 @@
+{
+  "name": "paramdigma-website",
+  "version": "1.0.0",
+  "description": "Paramdigma.com website package",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paramdigma/paramdigma-website.git"
+  },
+  "author": "Alan Rynne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paramdigma/paramdigma-website/issues"
+  },
+  "homepage": "https://github.com/Paramdigma/paramdigma-website#readme",
+  "dependencies": {
+    "bulma": "^0.7.2"
+  }
+}
