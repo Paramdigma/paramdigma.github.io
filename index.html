@@ -7,14 +7,16 @@
     <title>Paramdigma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
     <script src="main.js"></script>
-    <script src="node_modules/particlesjs/dist/particles.js"></script>
+    <script src="particles.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <section class="hero is-primary is-fullheight">
+    <section class="hero is-primary is-fullheight" id="particles-js">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
             <header class="navbar">
@@ -25,27 +27,18 @@
                             <!-- <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"> -->
                         </a>
                     </div>
-                    <!-- <div id="navbarMenuHeroC" class="navbar-menu">
+                    <div id="navbarMenuHeroC" class="navbar-menu">
                         <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                Home
-                            </a>
-                            <a class="navbar-item">
-                                Examples
-                            </a>
-                            <a class="navbar-item">
-                                Documentation
-                            </a>
                             <span class="navbar-item">
                                 <a class="button is-primary is-inverted">
                                     <span class="icon">
-                                        <i class="fab fa-github"></i>
+                                        <i class="fas fa-question-circle"></i>
                                     </span>
-                                    <span>Download</span>
+                                    <span>Who are we?</span>
                                 </a>
                             </span>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </header>
         </div>
@@ -61,7 +54,7 @@
                 </h2>
                 <h2 class="subtitle">Meanwhile, you can always...</h2>
                 <p class="buttons is-centered">
-                    <a class="button is-primary is-inverted" onclick="toggleContactForm()">
+                    <a class="button is-primary is-inverted" href="mailto:info@paramdigma.com">
                         <span class="icon">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -141,6 +134,8 @@
             <button class="modal-close is-large" aria-label="close" onclick="toggleContactForm()"></button>
         </div>
     </section>
+    <script src="particletest.js" type="text/javascript"></script>
+
 </body>
 
 </html>
