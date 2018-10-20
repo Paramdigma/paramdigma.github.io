@@ -6,6 +6,11 @@ function toggleContactForm(){
     document.getElementById("contact-form").classList.toggle("is-active");
 }
 
+function toggleAboutUsModal(){
+  document.getElementById("about-us").classList.toggle("is-active");
+}
+
+
 // ADD MENU ITEMS TO MOBILE + CHANGE MENU ICON TO AN X
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -2,7 +2,7 @@
   "name": "paramdigma-website",
   "version": "1.0.0",
   "description": "Paramdigma.com website package",
-  "main": "index.html",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Paramdigma/paramdigma-website#readme",
   "dependencies": {
-    "bulma": "^0.7.2"
+    "bulma": "^0.7.2",
+    "particlesjs": "^2.2.3"
   }
 }
