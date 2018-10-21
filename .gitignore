@@ -1,5 +1,7 @@
 
-node_modules/bulma
+# NPM packages location
+node_modules/
 node_modules/particles.js/*
 !node_modules/particles.js/particles.js
+
 .DS_STORE
