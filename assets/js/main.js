@@ -1,15 +1,8 @@
 // PARAMDIGMA.COM
 // Main.js
 
-// Toggle visibility of modal contact form on main page
-function toggleContactForm(){
-    document.getElementById("contact-form").classList.toggle("is-active");
-}
-
-function toggleAboutUsModal(){
-  document.getElementById("about-us").classList.toggle("is-active");
-}
-
+var particlesJS = require('particles.js');
+var threeJS = require('three');
 
 // ADD MENU ITEMS TO MOBILE + CHANGE MENU ICON TO AN X
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,3 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+

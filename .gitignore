@@ -1,7 +1,5 @@
 
 # NPM packages location
-node_modules/
-node_modules/particles.js/*
-!node_modules/particles.js/particles.js
+node_modules/*
 
 .DS_STORE

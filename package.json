@@ -2,9 +2,18 @@
   "name": "paramdigma-website",
   "version": "1.0.0",
   "description": "Paramdigma.com website package",
-  "main": "main.js",
+  "main": "assets/js/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
+    "watch-css": "sass --watch assets/css/main.scss assets/css/main.css",
+    "build-css": "sass assets/css/main.scss assets/css/main.css",
+
+    "watch-js": "watchify assets/js/main.js -o assets/js/bundle.js",
+    "build-js": "browserify assets/js/main.js -o assets/js/bundle.js",
+
+    "watch": "npm run watch-css && npm run watch-js",
+    "build": "npm run build-css && npm run build-js"
+
   },
   "repository": {
     "type": "git",
@@ -18,6 +27,7 @@
   "homepage": "https://github.com/Paramdigma/paramdigma-website#readme",
   "dependencies": {
     "bulma": "^0.7.2",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "three": "^0.97.0"
   }
 }
