@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
 @keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -8156,7 +8157,8 @@ label.panel-block:hover {
 
 .letter {
   display: inline-block;
-  font-size: 240%;
+  font-family: "Lato", sans-serif;
+  font-size: 2.3em;
   font-weight: 500;
   position: relative;
   color: #8A4D76;
@@ -8165,6 +8167,17 @@ label.panel-block:hover {
   z-index: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .letter {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .letter {
+    font-size: 0.8em;
+    margin-right: -0.2em;
+  }
+}
 .letter:before, .letter:after {
   position: absolute;
   content: attr(data-letter);
