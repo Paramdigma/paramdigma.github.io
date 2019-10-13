@@ -1,5 +1,5 @@
-
-# NPM packages location
-node_modules/*
-
-.DS_STORE
+*.gem
+.bundle
+.sass-cache
+_site
+Gemfile.lock

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<!-- Hero section -->
+{% capture heroColor %}{% if page.hero.color %}{{page.hero.color}}{% else %}primary{% endif %}{% endcapture %}
+{% capture heroSize %}{% if page.hero.size %}{{page.hero.size}}{% else %}medium{% endif %}{% endcapture %}
+
+{% include hero.html 
+    color=heroColor
+    size=heroSize
+    tabs=page.hero.tabs 
+%}
+
+<!-- Content section -->
+<section class="section">
+    <div class="container">
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+</section>
