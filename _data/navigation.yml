@@ -1,10 +1,14 @@
 - name: Home
   link: /
+- name: Projects
+  link: /projects/
+- name: Tutorials
+  link: /tutorials/
 - name: Blog
   link: /blog/
 - name: About
   link: /about/
-- name: Login
-  link:
+- name: Github
+  link: https://github.com/paramdigma
   button: true
-  icon: fas fa-user
+  icon: fab fa-github

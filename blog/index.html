@@ -1,31 +1,42 @@
 ---
 layout: page
 title: My Blog
+breadcrumb: Blog
 hero:
   particles: true
+  tabs:
+    - name: All posts
+      active: true
+    - name: Grasshopper
+    - name: Dynamo
+    - name: ArchiCAD
 ---
 
 <!-- This loops through the paginated posts -->
+{% if paginator.total_pages > 1 %}
+    <nav class="pagination is-centered top-pagination" role="navigation" aria-label="pagination">
+        
+        {% if paginator.previous_page_path %}
+            <a href="{{ paginator.previous_page_path }}" class="pagination-previous">
+                Previous
+            </a>
+        {% else %}
+            <span class="pagination-previous" disabled>Previous</span>
+        {% endif %}
+
+        {% if paginator.next_page_path %}
+            <a href="{{ paginator.next_page_path }}" class="pagination-next">Next</a>
+        {% else %}
+            <span class="pagination-next" disabled>Next</span>
+        {% endif %}
+    </nav>
+{% endif %}
+
 {% for post in paginator.posts %}
-    <div class="card">
-    <div class="card-image">
-        <div class="image is-3by1 post-image" style="background-image: url(/assets/img/author-alanrynne.jpeg);"></div>
-    </div>
-    <div class="card-content">
-        <div class="content">
-            <h1>{{post.title}}</h1>
-            <h4 class="subtitle is-6 has-text-primary">
-                {{post.date | date: "%-d %B %Y"}} - {{post.author}}
-            </h4>
-            {{post.content | truncate: 350 }} <a href="{{post.url}}">Read more</a>
-            <br>
-            </div>
-        </div>
-    </div>
-    
-    </div>
+    {% include blog-entry.html %}
 {% endfor %}
 
+{% if paginator.total_pages > 1 %}
 <nav class="pagination is-centered" role="navigation" aria-label="pagination">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="pagination-previous">
@@ -37,6 +48,7 @@ hero:
       {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}" class="pagination-next">Next</a>
     {% else %}
-        <span class="pagination-next" diabled>Next</span>
+        <span class="pagination-next" disabled>Next</span>
     {% endif %}
 </nav>
+{% endif %}

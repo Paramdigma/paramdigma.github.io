@@ -1,0 +1,41 @@
+.footer {
+    &.is-white {
+        background-color: $white;
+    }
+
+    &.is-black {
+        background-color: $black;
+    }
+
+    &.is-light {
+        background-color: $light;
+    }
+
+    &.is-dark {
+        background-color: $dark;
+    }
+
+    &.is-primary {
+        background-color: $primary;
+    }
+
+    &.is-link {
+        background-color: $link;
+    }
+
+    &.is-info {
+        background-color: $info;
+    }
+
+    &.is-success {
+        background-color: $success;
+    }
+
+    &.is-warning {
+        background-color: $warning;
+    }
+
+    &.is-danger {
+        background-color: $danger;
+    }
+}

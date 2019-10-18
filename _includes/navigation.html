@@ -15,7 +15,8 @@
             {% for navItem in site.data.navigation %}
                 {% if navItem.button %}
                 <span class="navbar-item">
-                    <a class="button is-primary is-inverted" href={{navItem.link}}>
+                    <a class="button                 
+                    {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%}  is-inverted" href={{navItem.link}}>
                         <span class="icon">
                             <i class="{{navItem.icon}}"></i>
                         </span>

@@ -1,9 +1,12 @@
-<section class="hero 
+<section class="hero is-bold
                 {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%} 
                 {% if include.size %}is-{{include.size}}{% else %}is-fullheight{% endif %}">
-  {% if page.hero.particles %}
-    
+  {% if include.particles %}
   <div id="particles-js"></div>
+  {% endif %}
+  {% if include.image %}
+  <div class="bg-image" style="background-image: url({{include.image}});">
+  </div>
   {% endif %}
   <div class="hero-head">
     {% include navigation.html %}

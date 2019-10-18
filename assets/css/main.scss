@@ -7,49 +7,79 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
+$purple: #8a4d76;
+$pink: #fa7c91;
 $brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: 'Nunito', sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
 $link: $pink;
 $widescreen-enabled: false;
-$fullhd-enabled: false;
+$fullhd-enabled: true;
 
 // Update some of Bulma's component variables
 // $body-background-color: $beige-lighter;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$footer-background-color: $primary;
 
-@import "bulma/bulma";
+@import 'bulma/bulma';
+@import 'bulma-modifications';
 
-.input {
-  background-color: $grey-light;
+html,
+body {
+  min-height: 100% !important;
+  box-sizing: border-box;
 }
 
-// Hero particles-js style
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.main-content {
+  flex-basis: 100%;
 }
 
 // Iframe include styles
-.iframe-container
-{
+.iframe-container {
   iframe {
     height: inherit;
     width: inherit;
   }
+}
+.post-categories {
+  padding-right: 1.5em;
+  .post-category {
+    &:hover {
+      background-color: $link !important;
+    }
+  }
+}
+.icon-headers {
+  padding-bottom: 1em;
+  .columns {
+    padding-bottom: 1em;
+    .column {
+      text-align: center;
+      svg {
+        color: $grey-dark;
+      }
+      p {
+        padding-top: 1em;
+      }
+    }
+  }
+}
+.centered-quote {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 1em;
+  font-size: 140%;
+  font-style: oblique;
+  text-align: justify;
+  color: $primary;
 }
 
 .image {
@@ -60,5 +90,26 @@ $input-shadow: none;
   background-color: $primary;
   background-position: center;
   background-size: cover;
-  height: 200px!important;
+  height: 20px !important;
+}
+
+.blog-item {
+  margin-bottom: 1em;
+
+  .subtitle {
+    margin-left: 1em;
+  }
+}
+
+.highlighter-rouge {
+  margin-bottom: 1em;
+
+  .highlight {
+    border-radius: 5px !important;
+    padding-top: 1em !important;
+  }
+  &:after {
+    content: Title;
+    color: white;
+  }
 }
