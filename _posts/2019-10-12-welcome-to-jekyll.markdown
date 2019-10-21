@@ -12,6 +12,7 @@ image: https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2
 
 hero:
   particles: true
+  color: primary
   size: medium
   image: https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80
 ---

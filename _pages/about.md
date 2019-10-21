@@ -1,8 +1,7 @@
 ---
 layout: page-sidebar
 title: About
-breadcrumb: About
-permalink: /about/
+permalink: /about/index.html
 hero:
   particles: true
   size: medium
@@ -14,3 +13,5 @@ hero:
 ## What do we do?
 
 ### Test level 3
+
+{% include testThreeJSscene.html title="A title 3D" %}

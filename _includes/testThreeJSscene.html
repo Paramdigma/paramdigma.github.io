@@ -1,0 +1,43 @@
+<div id="{{include.title | downcase | | replace: ' ', '-'}}" class="container threejs-box" title="{{include.title}}">
+</div>
+
+<script src="{{site.url}}/assets/js/threejs/three.js"></script>
+<script>
+            var parent = document.getElementById("{{include.title | downcase | | replace: ' ', '-'}}");
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, 600/350, 0.1, 1000 );
+
+            var renderer = new THREE.WebGLRenderer({alpha: true});
+            renderer.setSize( 600, 350 );
+            renderer.domElement.className += ' threejs-canvas';
+            parent.appendChild(renderer.domElement);
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshNormalMaterial();
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+			camera.position.z = 5;
+
+            window.addEventListener( 'resize', onWindowResize, false );
+			
+            function onWindowResize() {
+                console.log("Testing width: " + parent.clientWidth);
+                camera.aspect = parent.clientWidth / parent.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize( parent.clientWidth, parent.clientHeight );
+            }
+
+            
+			var animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+            };
+            
+
+            animate();
+            
+</script>

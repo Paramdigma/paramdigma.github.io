@@ -1,7 +1,6 @@
 ---
 layout: page-sidebar
 title: Projects
-breadcrumb: Projects
 hero:
   particles: true
   size: medium

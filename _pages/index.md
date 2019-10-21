@@ -23,9 +23,46 @@ experience:
         text: Some text
 ---
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-{: .centered-quote}
+# Thank you for visiting us!
+{: .has-text-centered .has-text-primary}
+
+#### Here at _**The Paramdigma**_ we love...
+{: .has-text-centered}
 
 {% include icon-headers.html items=page.experience %}
 
-{% include net-fiddle.html code="sOf7Rf" height="450px" %}
+We are a collective of expert & enthusiasts that believe that automation & digitalization in our industry will play a key role in the comming years. Our aim is to _spread the word_ via sharing our knowledge and software solutions with the world.
+{: .centered-quote}
+
+Every single tutorial, video, we share freely will be covered by an Open Source license, usually MIT, so you can use it as you seem fit, no strings attached!
+{: .centered-quote}
+
+# Want to know more?
+{: .has-text-centered .has-text-primary}
+
+### Please check out...
+{: .has-text-centered}
+
+<div class="columns" style="padding-bottom:2em;padding-top:2em;">
+<div class="column"></div>
+<div class="column has-text-centered" markdown="1">
+[About us](/about){: .button .is-link .is-large.is-fullwidth}
+</div>
+<div class="column has-text-centered" markdown="1">
+[Projects](/projects){: .button .is-info.is-large.is-fullwidth}
+</div>
+<div class="column has-text-centered" markdown="1">
+[Tutorials](/tutorials){: .button .is-success.is-large.is-fullwidth}
+</div>
+<div class="column has-text-centered" markdown="1">
+[Blog](/blog){: .button .is-warning .is-large .is-fullwidth}
+</div>
+<div class="column"></div>
+</div>
+
+### ...or follow us on social media!
+{: .has-text-centered}
+
+{% include social-media.html %}
+
+<!-- {% include net-fiddle.html code="sOf7Rf" height="450px" %} -->

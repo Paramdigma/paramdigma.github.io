@@ -26,11 +26,13 @@ plugins:
 
 paginate_path: '/blog/page:num/'
 paginate: 5
+permalink: blog/:year-:month-:title.html
 
 collections:
   pages:
     output: true
     permalink: /:title/index.html
+
   categories:
     output: true
     permalink: /categories/:title/index.html

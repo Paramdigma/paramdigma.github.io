@@ -7,27 +7,27 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Set your brand colors
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
+// $purple: #8a4d76;
+// $pink: #fa7c91;
+// $brown: #757763;
+// $beige-light: #d0d1cd;
+// $beige-lighter: #eff0eb;
 
 // Update Bulma's global variables
 $family-sans-serif: 'Nunito', sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: true;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $purple;
+// $link: $brown;
+// $widescreen-enabled: false;
+// $fullhd-enabled: true;
 
 // Update some of Bulma's component variables
 // $body-background-color: $beige-lighter;
-$control-border-width: 2px;
-$input-border-color: transparent;
-$input-shadow: none;
-$footer-background-color: $primary;
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+// $footer-background-color: $primary;
 
 @import 'bulma/bulma';
 @import 'bulma-modifications';
@@ -58,16 +58,44 @@ body {
   }
 }
 .icon-headers {
-  padding-bottom: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   .columns {
     padding-bottom: 1em;
     .column {
       text-align: center;
+      transition: 1s;
+
+      &:hover {
+          svg {
+            color: $grey-dark;
+            transition: inherit;
+            font-size: 450%;
+          }
+          h5 {
+            color: $primary;
+            transition: inherit;
+          }
+          p {
+            color: $grey-dark;
+            transition: inherit;
+          }
+      }
       svg {
-        color: $grey-dark;
+        color: $primary;
+        transition: inherit;
+
+      }
+      h5 {
+        padding-top: 1em;
+        transition: inherit;
       }
       p {
-        padding-top: 1em;
+        transition: inherit;
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;
+        color: $grey-light;
       }
     }
   }
@@ -111,5 +139,72 @@ body {
   &:after {
     content: Title;
     color: white;
+  }
+}
+
+.social-media {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.footer {
+  .breadcrumb {
+    color: white !important;
+
+    a {
+      color: white;
+      &:visited {
+        font-weight: bolder !important;
+        font-style: italic !important;
+        color: white;
+      }
+    }
+    li {
+      &.is-active {
+        a {
+          color: white;
+          font-weight: bolder !important;
+        }
+      }
+    }
+    li + li::before {
+      color: white;
+    }
+  }
+}
+
+.threejs-box{
+  max-width: 80%;
+  min-width: 50%;
+  min-height: 50px;
+  max-height: 350px;
+
+  &:before {
+    content: url(/assets/img/traffic-lights.svg);
+    box-sizing: content-box;
+    height: 8pt;
+    width: 32pt;
+    z-index: 100;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+  }
+
+  &:after {
+    content: attr(title);
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    z-index: 100;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .threejs-canvas {
+    box-shadow: 0 2px 3px rgba(39, 21, 21, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);  
+    width: 100% !important;
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244);
+
   }
 }
