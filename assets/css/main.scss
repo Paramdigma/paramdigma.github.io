@@ -32,6 +32,21 @@ $family-sans-serif: 'Nunito', sans-serif;
 @import 'bulma/bulma';
 @import 'bulma-modifications';
 
+@mixin default-shadow {
+  box-shadow: 0 2px 3px rgba(39, 21, 21, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+@mixin traffic-light {
+  content: url(/assets/img/traffic-lights.svg);
+  box-sizing: content-box;
+  height: 8pt;
+  width: 32pt;
+  z-index: 100;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+
 html,
 body {
   min-height: 100% !important;
@@ -67,24 +82,23 @@ body {
       transition: 1s;
 
       &:hover {
-          svg {
-            color: $grey-dark;
-            transition: inherit;
-            font-size: 450%;
-          }
-          h5 {
-            color: $primary;
-            transition: inherit;
-          }
-          p {
-            color: $grey-dark;
-            transition: inherit;
-          }
+        svg {
+          color: $grey-dark;
+          transition: inherit;
+          font-size: 450%;
+        }
+        h5 {
+          color: $primary;
+          transition: inherit;
+        }
+        p {
+          color: $grey-dark;
+          transition: inherit;
+        }
       }
       svg {
         color: $primary;
         transition: inherit;
-
       }
       h5 {
         padding-top: 1em;
@@ -129,16 +143,28 @@ body {
   }
 }
 
-.highlighter-rouge {
+[class^='language-'].highlighter-rouge {
+  position: relative;
   margin-bottom: 1em;
 
   .highlight {
+    @include default-shadow;
     border-radius: 5px !important;
     padding-top: 1em !important;
   }
-  &:after {
-    content: Title;
-    color: white;
+
+  &::after {
+    content: attr(title);
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+    color: rgb(227, 226, 226);
+  }
+  &:before {
+    @include traffic-light;
   }
 }
 
@@ -173,21 +199,14 @@ body {
   }
 }
 
-.threejs-box{
-  max-width: 80%;
+.threejs-box {
+  max-width: 100%;
   min-width: 50%;
   min-height: 50px;
   max-height: 350px;
 
   &:before {
-    content: url(/assets/img/traffic-lights.svg);
-    box-sizing: content-box;
-    height: 8pt;
-    width: 32pt;
-    z-index: 100;
-    position: absolute;
-    top: 5px;
-    left: 8px;
+    @include traffic-light;
   }
 
   &:after {
@@ -201,10 +220,39 @@ body {
   }
 
   .threejs-canvas {
-    box-shadow: 0 2px 3px rgba(39, 21, 21, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);  
+    box-shadow: 0 2px 3px rgba(39, 21, 21, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     width: 100% !important;
     border-radius: 5px;
     background-color: rgb(244, 244, 244);
+  }
+}
 
+.tutorials {
+  .topic {
+    .title {
+      font-size: 100% !important;
+      color: $primary;
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+    }
+
+    .tutorial-item {
+      margin-bottom: 1em;
+      .title {
+        color: $grey-dark;
+        margin-left: 1em;
+        margin-bottom: 0.2em;
+        font-size: 120%;
+        border-bottom: 1pt solid $primary;
+
+        &:hover{
+          color: $primary;
+        }
+      }
+      .description {
+        margin-left: 3em;
+        color: $grey-dark
+      }
+    }
   }
 }

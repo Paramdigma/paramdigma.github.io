@@ -31,14 +31,55 @@ permalink: blog/:year-:month-:title.html
 collections:
   pages:
     output: true
-    permalink: /:title/index.html
-
+    permalink: /:title/
   categories:
     output: true
-    permalink: /categories/:title/index.html
+    permalink: /categories/:title/
   projects:
     output: true
-    permalink: /projects/:title/index.html
+    permalink: /projects/:title/
   tutorials:
     output: true
-    permalink: /tutorials/:title/index.html
+    permalink: /tutorials/:title/
+
+defaults:
+  - scope:
+      path: "" # All pages and posts
+    values:
+      layout: null
+  - scope:
+      path: "" # All pages and posts
+      type: "posts"
+    values:
+      layout: "post-sidebar"
+      hero:
+        particles: true
+        color: info
+        size: medium
+  - scope:
+      path: "" # All pages and posts
+      type: "pages"
+    values:
+      layout: "page"
+      hero:
+        particles: true
+        color: primary
+        size: medium
+  - scope:
+      path: "" # All pages and posts
+      type: "tutorials"
+    values:
+      layout: "page"
+      hero:
+        particles: true
+        color: success
+        size: medium
+  - scope:
+      path: "" 
+      type: "projects"
+    values:
+      layout: "page"
+      hero:
+        particles: true
+        color: success
+        size: medium

@@ -1,7 +1,6 @@
 ---
 layout: page-sidebar
 title: About
-permalink: /about/index.html
 hero:
   particles: true
   size: medium
@@ -14,4 +13,15 @@ hero:
 
 ### Test level 3
 
-{% include testThreeJSscene.html title="A title 3D" %}
+{% include testThreeJSscene.html title="Teddy Bear" model="/assets/models/teddybear.obj" %}
+
+## A code block
+
+```csharp
+public void aMethod(int one, int two)
+{
+
+}
+```
+{: title="C#"}
+
