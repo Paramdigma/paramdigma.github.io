@@ -13,7 +13,7 @@ hero:
 
 ### Test level 3
 
-{% include testThreeJSscene.html title="Teddy Bear" model="/assets/models/teddybear.obj" %}
+{% include particlesScene.html title="Teddy Bear" model="/assets/models/teddybear.obj" %}
 
 ## A code block
 

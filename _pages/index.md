@@ -24,18 +24,18 @@ experience:
 ---
 
 # Thank you for visiting us!
-{: .has-text-centered .has-text-primary}
-
-#### Here at _**The Paramdigma**_ we love...
-{: .has-text-centered}
-
-{% include icon-headers.html items=page.experience %}
+{: .title .has-text-centered .has-text-primary}
 
 We are a collective of expert & enthusiasts that believe that automation & digitalization in our industry will play a key role in the comming years. Our aim is to _spread the word_ via sharing our knowledge and software solutions with the world.
 {: .centered-quote}
 
 Every single tutorial, video, we share freely will be covered by an Open Source license, usually MIT, so you can use it as you seem fit, no strings attached!
 {: .centered-quote}
+
+#### Here at _**The Paramdigma**_ we love...
+{: .has-text-centered}
+
+{% include icon-headers.html items=page.experience %}
 
 # Want to know more?
 {: .has-text-centered .has-text-primary}

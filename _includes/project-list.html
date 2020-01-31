@@ -1,0 +1,36 @@
+<div class="tile is-ancestor">
+  <div class="tile is-parent is-vertical">
+    <article class="tile is-child notification is-danger">
+      <p class="title">Wide tile</p>
+      <p class="subtitle">Aligned with the right tile</p>
+      <div class="content">
+        <!-- Content -->
+      </div>
+    </article>
+    <article class="tile is-child notification is-danger">
+      <p class="title">Wide tile</p>
+      <p class="subtitle">Aligned with the right tile</p>
+      <div class="content">
+        <!-- Content -->
+      </div>
+    </article>
+    <article class="tile is-child notification is-danger">
+      <p class="title">Wide tile</p>
+      <p class="subtitle">Aligned with the right tile</p>
+      <div class="content">
+        <!-- Content -->
+      </div>
+    </article>
+    {% for project in site.projects %}
+    {% capture projcolor %}is-{%if project.hero.color %}{{project.hero.color}}{% else%}primary{% endif%}{% endcapture %}
+    <a href="{{project.url}}" class="tile is-child notification {{projcolor}}" {% if project.hero.image %}
+      data-background-image="{{project.hero.image}}" {% endif %}>
+      <p class=" title">{{project.title}}</p>
+      <p class="subtitle">{{project.description}}</p>
+      <div class="content">
+        <!-- Content -->
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

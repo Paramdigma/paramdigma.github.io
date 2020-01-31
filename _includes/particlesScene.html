@@ -18,7 +18,7 @@
             var parent = document.getElementById("{{id}}");
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, 600/350, 1, 1000 );
-            var renderer = new THREE.WebGLRenderer({alpha: true});
+            var renderer = new THREE.WebGLRenderer({alpha:true});
 
             var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
@@ -54,6 +54,8 @@
                 // set camera to rotate around center of loaded object
                 controls.target = center;
 
+                console.log(center);
+                console.log(camera.position);
                 // prevent camera from zooming out far enough to create far plane cutoff
                 controls.maxDistance = cameraToFarEdge * 2;
 
@@ -64,51 +66,62 @@
                 }
             }
             
-            controls.autoRotate = true;
-            controls.minDistance = 20;
-            controls.maxDistance = 50;
-			camera.position.z = 5;
+            //controls.autoRotate = true;
+
 
             renderer.setSize( 600, 350 );
             renderer.domElement.className += ' threejs-canvas';
             parent.appendChild(renderer.domElement);
             
-            var loader = new THREE.OBJLoader();
-            // load a resource
-            loader.load(
-                // resource URL
-                '{{site.url}}{{include.model}}',
-                // called when resource is loaded
-                function ( object ) {
-                    object.traverse( function ( child ) {
-                        if ( child instanceof THREE.Mesh ) {
-                            child.material = new THREE.MeshNormalMaterial();
-                            child.material.side = THREE.DoubleSide;
-
-                        }
-                    });
-                    scene.add(object);
-
-                    fitCameraToObject(camera,object,7,controls);
-                    onWindowResize();
-
-                },
-                // called when loading is in progresses
-                function ( xhr ) {
-
-                    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-                },
-                // called when loading has errors
-                function ( error ) {
-
-                    console.log( 'An error happened' );
-
-                }
-            );
-            
             window.addEventListener( 'resize', onWindowResize, false );
-			
+
+            var ammountX = 100;
+            var ammountY = 100;
+            var separation = 100;
+            var numParticles = ammountX * ammountY;
+            var positions = new Float32Array(numParticles * 3);
+            var scales = new Float32Array(numParticles);
+
+            
+            var geometry = new THREE.Geometry();
+            var t = 0;
+            var h = 200;
+            var a = 1000;
+            var timeStep = 0.07;
+
+            var i = 0, j=0;
+            for (let x = 0; x < ammountX; x++) {
+                for (let y = 0; y < ammountY; y++) {
+                    let rX = x * 100;
+                    let rY = y * 100;
+                    geometry.vertices.push(new THREE.Vector3(rX,rY,0));
+
+                    positions[i] = x * separation - ((ammountX * separation)/2);
+                    positions[i+1] = 0;
+                    positions[i+2] = y * separation - ((ammountY*separation)/2);
+
+                    scales[j] = 1;
+
+                    i+=3;
+                    j++;
+                }
+            }
+            var bufferGeom = new THREE.BufferGeometry();
+            bufferGeom.addAttribute('position',new THREE.BufferAttribute(positions,3));
+            bufferGeom.addAttribute('scale', new THREE.BufferAttribute(scales,1));
+
+            var ptCldMaterial = new THREE.PointsMaterial({
+            color: 0x000000
+            });
+            var pointCloud = new THREE.Points(geometry, ptCldMaterial);
+            scene.add(pointCloud);
+            fitCameraToObject(camera,pointCloud,5,controls);
+            
+            camera.position.x = 5000;
+            camera.position.y = 0;
+            camera.target = new THREE.Vector3(5000,5000,0);
+            camera.position.z = 50;
+
             function onWindowResize() {
                 console.log("Testing width: " + parent.clientWidth);
                 camera.aspect = parent.clientWidth / parent.clientHeight;
@@ -117,9 +130,18 @@
             }
 
 			var animate = function () {
-				requestAnimationFrame( animate );
+                requestAnimationFrame( animate );
+                
+                geometry.vertices.forEach(particle => {
+                    let dist = Math.sqrt(particle.x*particle.x + particle.y*particle.y);
+                    particle.z = h*Math.sin(dist/a + t);
+                });
+
+                geometry.verticesNeedUpdate = true;
+
                 controls.update();
-				renderer.render( scene, camera );
+                renderer.render( scene, camera );
+                t += timeStep;
             };
             
             animate();  

@@ -28,6 +28,10 @@ paginate_path: '/blog/page:num/'
 paginate: 5
 permalink: blog/:year-:month-:title.html
 
+webrick:
+  headers:
+    Access-Control-Allow-Origin: '*'
+
 collections:
   pages:
     output: true
@@ -44,41 +48,41 @@ collections:
 
 defaults:
   - scope:
-      path: "" # All pages and posts
+      path: '' # All pages and posts
     values:
       layout: null
   - scope:
-      path: "" # All pages and posts
-      type: "posts"
+      path: '' # All pages and posts
+      type: 'posts'
     values:
-      layout: "post-sidebar"
+      layout: 'post-sidebar'
       hero:
         particles: true
         color: info
         size: medium
   - scope:
-      path: "" # All pages and posts
-      type: "pages"
+      path: '' # All pages and posts
+      type: 'pages'
     values:
-      layout: "page"
+      layout: 'page'
       hero:
         particles: true
         color: primary
         size: medium
   - scope:
-      path: "" # All pages and posts
-      type: "tutorials"
+      path: '' # All pages and posts
+      type: 'tutorials'
     values:
-      layout: "page"
+      layout: 'page'
       hero:
         particles: true
         color: success
         size: medium
   - scope:
-      path: "" 
-      type: "projects"
+      path: ''
+      type: 'projects'
     values:
-      layout: "page"
+      layout: 'page'
       hero:
         particles: true
         color: success

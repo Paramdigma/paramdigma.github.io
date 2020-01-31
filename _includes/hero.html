@@ -1,12 +1,9 @@
 <section class="hero is-bold
                 {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%} 
-                {% if include.size %}is-{{include.size}}{% else %}is-fullheight{% endif %}">
+                {% if include.size %}is-{{include.size}}{% else %}is-fullheight{% endif %}" {% if include.image %}
+  data-background-image="{{include.image}}" {% endif %}>
   {% if include.particles %}
   <div id="particles-js"></div>
-  {% endif %}
-  {% if include.image %}
-  <div class="bg-image" style="background-image: url({{include.image}});">
-  </div>
   {% endif %}
   <div class="hero-head">
     {% include navigation.html %}
@@ -28,9 +25,7 @@
       <div class="container">
         <ul>
           {% for tab in include.tabs %}
-          <li {% if tab.active %}
-            class="is-active"
-          {% endif %}>
+          <li {% if tab.active %} class="is-active" {% endif %}>
             <a>{{tab.name}}</a>
           </li>
           {% endfor %}
