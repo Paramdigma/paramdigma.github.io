@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Project 1
-description: A simple project exemplifying....
+subtitle: A simple project exemplifying....
 hero:
   particles: true
   size: medium

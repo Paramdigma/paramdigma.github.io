@@ -1,7 +1,7 @@
 <section class="hero is-bold
                 {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%} 
                 {% if include.size %}is-{{include.size}}{% else %}is-fullheight{% endif %}" {% if include.image %}
-  data-background-image="{{include.image}}" {% endif %}>
+  data-background-image="{{include.image}}" {% endif %} style="background-position: top;">
   {% if include.particles %}
   <div id="particles-js"></div>
   {% endif %}

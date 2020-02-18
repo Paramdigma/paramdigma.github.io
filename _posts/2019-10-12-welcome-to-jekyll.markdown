@@ -4,7 +4,7 @@ date: 2019-10-12 16:33:47 +0200
 categories: [grasshopper, dynamo, architectural geometry]
 author: Alan Rynne
 image: https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80
-
+layout: post
 hero:
   image: https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80
 ---
@@ -25,9 +25,9 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 ```
 
-## 3D viewer!!
+## 3D view
 
-{% include particlesScene.html title="Teddy Bear" model="/assets/models/teddybear.obj" %}
+{% include 3D-OBJnormals.html title="Teddy Bear" model="/assets/models/teddybear.obj" %}
 
 ## More!!
 
