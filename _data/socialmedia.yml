@@ -1,0 +1,12 @@
+- name: github
+  icon: fab fa-github
+  url: https://github.com/paramdigma
+- name: instagram
+  icon: fab fa-instagram
+  url: https://instagram.com/paramdigma
+- name: facebook
+  icon: fab fa-facebook-f
+  url: https://facebook.com/paramdigma
+- name: twitter
+  icon: fab fa-twitter
+  url: https://twitter.com/paramdigma

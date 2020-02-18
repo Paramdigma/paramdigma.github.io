@@ -1,0 +1,13 @@
+<div class="icon-headers">
+    {% for column in site.data.iconheaders %}
+        <div class="columns">
+            {% for item in column %}
+                <div class="column">
+                    <i class="{{item.icon}} fa-5x"></i>
+                    <h5>{{item.title}}</h5>
+                    <p>{{item.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

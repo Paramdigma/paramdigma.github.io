@@ -1,0 +1,35 @@
+{% assign tags = '' | split: ',' %}
+{% assign unique_tags = '' | split: ',' %}
+
+{% assign tutorial_tags =  site.tutorials | map: 'topic' | join: ',' | join: ',' | split: ',' %}
+
+{% for tag in tutorial_tags %}
+    {% assign tags = tags | push: tag %}
+{% endfor %}
+
+{% assign tags = tags | sort %}
+{% for tag in tags %}
+    {% unless tag == previous %}
+        {% assign unique_tags = unique_tags | push: tag %}
+    {% endunless %}
+    {% assign previous = tag %}
+{% endfor %}
+
+<div class="tutorials">
+{% for tag in unique_tags %}
+<div class="topic">
+    <h1 class="title">{{tag}}</h1>
+    {% for tut in site.tutorials %}
+        {% if tut.topic == tag %}
+            <a href="{{site.url}}{{tut.url}}">
+                <div class="tutorial-item">
+                    <h2 class="title">{{tut.title}}</h2>
+                    <p class="description">{{tut.description}}</p>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+</div>
+

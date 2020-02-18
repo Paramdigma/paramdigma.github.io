@@ -1,0 +1,70 @@
+@import "footer-colors.scss";
+
+html {
+    height: 100vh !important;
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100% !important;
+
+        .main-content {
+            flex-basis: 100% !important;
+            display: flex !important;
+            flex-grow: 5 !important;
+        }
+    }
+}
+
+.navbar-burger {
+    color: white !important;
+}
+
+#navbarMenuHeroB.is-active {
+    position: absolute !important;
+    width: 100%;
+    opacity: 0.95;
+}
+
+.input {
+    background-color: $grey-light;
+}
+
+.hero {
+    position: relative;
+
+    .hero-head {
+        z-index: 7 !important;
+    }
+
+    .hero-body,
+    .hero-foot {
+        z-index: 5 !important;
+    }
+
+    // Hero particles-js style
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2 !important;
+    }
+
+    .bg-image {
+        background-position: center;
+        background-size: cover;
+        opacity: 0.25;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0 !important;
+    }
+}
+
+.top-pagination {
+    margin-bottom: 1em;
+}

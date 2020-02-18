@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+        <!-- Hero section -->
+    {% capture heroColor %}{% if page.hero.color %}{{page.hero.color}}{% else %}primary{% endif %}{% endcapture %}
+    {% capture heroSize %}{% if page.hero.size %}{{page.hero.size}}{% else %}medium{% endif %}{% endcapture %}
+
+    {% include hero.html 
+        color=heroColor
+        size=heroSize
+        tabs=page.hero.tabs
+        particles=page.hero.particles
+        image=page.hero.image
+    %}
+
+    {{content}}
+    
+    {% unless page.footer == false %}
+        {% include footer.html %}
+    {% endunless %}
+</body>
+
+</html>

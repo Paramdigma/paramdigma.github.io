@@ -1,0 +1,35 @@
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{{site.url}}">
+            <img src="{{site.baseurl}}/assets/img/Logo.svg" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroB" class="navbar-menu">
+          <div class="navbar-end">
+            {% for navItem in site.data.navigation %}
+                {% if navItem.button %}
+                <span class="navbar-item">
+                    <a class="button                 
+                    {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%}  is-inverted" href={{navItem.link}}>
+                        <span class="icon">
+                            <i class="{{navItem.icon}}"></i>
+                        </span>
+                        <span>{{navItem.name}}</span>
+                    </a>
+                </span> 
+                {% else %}
+                <a class="navbar-item {% if page.url == navItem.link %} is-active{% endif %}" href={{navItem.link}}>
+                    {{navItem.name}}
+                </a>
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </nav>

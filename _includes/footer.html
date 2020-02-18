@@ -1,0 +1,10 @@
+{% assign color = page.hero.color %}
+<footer {% if page.hero.image %} data-background-image="{{page.hero.image}}" {% endif %} class="footer is-{{color}}"
+  style="background-position: bottom
+!important;">
+  {% include breadcrumbs.html %}
+  <div class="content has-text-centered has-text-light">
+    <b>The Paramdigma</b> <em>Computational Geometry Collective</em>
+    {% include social-media.html size="small" color="white" %}
+  </div>
+</footer>

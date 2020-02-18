@@ -1,0 +1,36 @@
+<section class="hero is-bold
+                {% if include.color %}is-{{include.color}}{%else%}is-primary{%endif%} 
+                {% if include.size %}is-{{include.size}}{% else %}is-fullheight{% endif %}" {% if include.image %}
+  data-background-image="{{include.image}}" {% endif %} style="background-position: top;">
+  {% if include.particles %}
+  <div id="particles-js"></div>
+  {% endif %}
+  <div class="hero-head">
+    {% include navigation.html %}
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        {{page.title}}
+      </p>
+      <p class="subtitle">
+        {{page.subtitle}}
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          {% for tab in include.tabs %}
+          <li {% if tab.active %} class="is-active" {% endif %}>
+            <a>{{tab.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>

@@ -1,33 +1,13 @@
-// PARAMDIGMA.COM
-// Main.js
-
-var particlesJS = require('particles.js');
-var threeJS = require('three');
-
-// ADD MENU ITEMS TO MOBILE + CHANGE MENU ICON TO AN X
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('main.js loaded')
+  var list = document.querySelectorAll("*[data-background-image]");
 
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-  
-      // Add a click event on each of them
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-  
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-  
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-  
-        });
-      });
-    }
-  });
+  for (var i = 0; i < list.length; i++) {
+    var url = list[i].getAttribute('data-background-image');
+    console.log("working", url)
+    list[i].style.backgroundImage = "url('" + url + "')";
+    list[i].style.backgroundSize = "cover"
+    list[i].style.backgroundBlendMode = "multiply"
+  }
 
-
+});

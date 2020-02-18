@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<!-- Content section -->
+<section class="section main-content">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="content">
+                    {{content}}
+                </div>
+            </div>
+            <div class="column is-one-quarter is-hidden-touch">
+                <aside class="menu">
+                    <p class="menu-label">Table of Contents</p>
+                    <ul class="menu-list">
+                        {% include toc.html html=content h_max=2 %}
+                    </ul>
+                    <p class="menu-label">See also</p>
+                    <ul class="menu-list">
+                        {% for item in site.data.navigation %}
+                        {% unless page.dir == item.link or item.link == "/" %}
+                        <li><a href="{{item.link}}">{{item.name}}</a></li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

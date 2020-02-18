@@ -1,0 +1,31 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}</title>
+
+  <script data-ad-client="ca-pub-4328798760324698" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/code-highlight.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="{{site.baseurl}}/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="{{site.baseurl}}/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="{{site.baserurl}}/assets/js/bulmajs/bulma.js"></script>
+  <script src="{{site.baserurl}}/assets/js/main.js"></script>
+
+  {% if page.hero.particles %}
+  <script src="{{site.baseurl}}/assets/js/particles.js"></script>
+  <script src="{{site.baseurl}}/assets/js/particles-init.js"></script>
+  {% endif %}
+</head>

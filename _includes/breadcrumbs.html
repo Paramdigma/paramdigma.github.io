@@ -1,0 +1,13 @@
+<div class="breadcrumb is-centered has-arrow-separator" aria-label="breadcrumbs">
+{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+<ul>
+    <li><a href="/">Home</a></li>
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.last %}
+        <li class="is-active" aria-current="page"><a>{{page.title}}</a></li>
+      {% else %}
+        <li><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+</div>
