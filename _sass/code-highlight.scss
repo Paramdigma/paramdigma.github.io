@@ -1,0 +1,244 @@
+$cream: #faf6e4;
+$light-gray: #dee5e7;
+
+$darker-blue: #122b3b;
+$dark-blue: #4e5d62;
+$mid-blue: #6c8b9f;
+$light-blue: #a8e1fe;
+$bright-blue: #4df4ff;
+
+$red: #cc0000;
+$yellow: #f6dd62;
+$green: #b2fd6d;
+
+div[class^='language-'].highlighter-rouge {
+    position: relative;
+    margin-bottom: 1em;
+
+    .highlight {
+        @include default-shadow;
+        border-radius: 5px !important;
+        padding-top: 2em !important;
+        padding-left: 1em;
+
+        pre {
+            padding-top: 0 !important;
+            padding-left: 0;
+            color: $cream;
+        }
+    }
+
+    &::after {
+        content: attr(title);
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        text-align: center;
+        color: rgb(227, 226, 226);
+    }
+
+    &:before {
+        @include traffic-light;
+    }
+}
+
+.rouge-code {
+    width: 100% !important;
+    padding-left: 1em !important;
+}
+
+.lineno {
+    color: $mid-blue !important
+}
+
+.highlight {
+
+    table {
+        td {
+            padding: 0px;
+
+        }
+
+        pre {
+            margin: 0;
+            background-color: transparent !important;
+            padding: 0 5px 0 5px;
+        }
+    }
+
+    color: $cream !important;
+    background-color: $darker-blue !important;
+
+    .gl {
+        user-select: none;
+    }
+
+    .gp {
+        color: $light-blue;
+        font-weight: bold;
+    }
+
+    .c,
+    .ch,
+    .cd,
+    .cm,
+    .cpf,
+    .c1,
+    .cs {
+        color: $mid-blue;
+        font-style: italic;
+    }
+
+    .cp {
+        color: $green;
+        font-weight: bold;
+    }
+
+    .err {
+        color: $cream;
+        background-color: $red;
+    }
+
+    .gr {
+        color: $red;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .k,
+    .kd,
+    .kv {
+        color: $yellow;
+        font-weight: bold;
+    }
+
+    .o,
+    .ow {
+        color: $bright-blue;
+        font-weight: bold;
+    }
+
+    .p,
+    .pi {
+        color: $bright-blue;
+    }
+
+    .gd {
+        color: $red;
+    }
+
+    .gi {
+        color: $green;
+    }
+
+    .ge {
+        font-style: italic;
+    }
+
+    .gs {
+        font-weight: bold;
+    }
+
+    .gt {
+        color: $light-gray;
+        background-color: #4e5d62;
+    }
+
+    .kc {
+        color: #f696db;
+        font-weight: bold;
+    }
+
+    .kn,
+    .kp,
+    .kr,
+    .gh,
+    .gu {
+        color: #ffb000;
+        font-weight: bold;
+    }
+
+    .kt,
+    .no,
+    .nc,
+    .nd,
+    .nn,
+    .bp,
+    .ne {
+        color: #b2fd6d;
+        font-weight: bold;
+    }
+
+    .nl,
+    .nt {
+        color: #ffb000;
+        font-weight: bold;
+    }
+
+    .m,
+    .mb,
+    .mf,
+    .mh,
+    .mi,
+    .il,
+    .mo,
+    .mx,
+    .ld,
+    .ss {
+        color: #f696db;
+        font-weight: bold;
+    }
+
+    .s,
+    .sa,
+    .sb,
+    .dl,
+    .sd,
+    .s2,
+    .sh,
+    .sx,
+    .sr,
+    .s1 {
+        color: #fff0a6;
+        font-weight: bold;
+    }
+
+    .se,
+    .sc,
+    .si {
+        color: #4df4ff;
+        font-weight: bold;
+    }
+
+    .nb {
+        font-weight: bold;
+    }
+
+    .ni {
+        color: #999999;
+        font-weight: bold;
+    }
+
+    .w,
+    .go {
+        color: #BBBBBB;
+    }
+
+    .nf,
+    .fm,
+    .py,
+    .na {
+        color: #a8e1fe;
+    }
+
+    .nv,
+    .vc,
+    .vg,
+    .vi,
+    .vm {
+        color: #a8e1fe;
+        font-weight: bold;
+    }
+}
