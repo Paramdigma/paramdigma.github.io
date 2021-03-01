@@ -28,6 +28,6 @@
   "dependencies": {
     "bulma": "^0.7.2",
     "particles.js": "^2.0.0",
-    "three": "^0.97.0"
+    "three": "^0.125.0"
   }
 }
